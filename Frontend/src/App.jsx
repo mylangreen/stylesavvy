@@ -47,13 +47,6 @@ function App() {
 
 
 
-//Calculate total price of items in cart
-const getTotalPrice = () => {
-    return cartItems.reduce((total,item)=>(total+item.price),0);
-};
-
-
-
   const router = createBrowserRouter([
     {
       path: "/login",
