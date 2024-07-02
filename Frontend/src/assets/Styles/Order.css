@@ -1,0 +1,27 @@
+.order-container {
+    width: 30%;
+    background-color:#96caf4d2;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.541);
+    height: 200px;
+    margin: 20px 0;
+}
+.order-container h2 {
+    color: #ff0000;
+}
+.order-details ul{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    list-style: none;
+    padding: 20px;
+    font-size: 1em;
+    font-weight: 800;
+}
+.order-details ul li {
+    color: black;
+}
+.order-details ul li span {
+    color: #151515;
+    font-size: 1.5em;
+}
