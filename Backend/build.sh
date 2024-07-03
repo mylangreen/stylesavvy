@@ -1,6 +1,6 @@
 set -o errexit
 
-cd Backend
+
 pip install -r requirements.txt
 
 python manage.py collectstatic --no-input
