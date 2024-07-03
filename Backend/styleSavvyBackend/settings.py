@@ -33,14 +33,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-#Mpesa Configuration
-MPESA_CONSUMER_KEY = 'WuK5KmVjjKscfhraar7wpCyHE3F7bdJ9s2LAwkTs8NQZDOff'
-MPESA_CONSUMER_SECRET = 'fXTKgSt9bKhPRH47cBeSmKlPH4eQEor97g26xC3HqAYT1DGXYxnIVAcrEHEfAS2A'
-MPESA_SHORTCODE = '174379'
-MPESA_PASSWORD = 'MTc0Mzc5YmZiMjc5ZjlhYTliZGJjZjE1OGU5N2RkNzFhNDY3Y2QyZTBjODkzMDU5YjEwZjc4ZTZiNzJhZGExZWQyYzkxOTIwMTYwMjE2MTY1NjI3'
-MPESA_TIMESTAMP = '20160216165627'
-MPESA_CALLBACK_URL = 'https://yourdomain.com/api/mpesa_callback'
-
 #Other configuration
 REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES":(
@@ -77,6 +69,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -111,13 +104,24 @@ CORS_ALLOWED_ORIGINS = [
 
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
-
-DATABASES = {
+if not DEBUG:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': "postgres",
+            'USER': "postgres.cmrrazqsbqpjrrguqyze",
+            'PASSWORD': "moZ8KOkA0pZXzOUc",
+            'HOST': "aws-0-ap-south-1.pooler.supabase.com",
+            'PORT': "6543"
+        }
+    }
+else:
+    DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
-}
+}    
 
 
 # Password validation
@@ -158,6 +162,8 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR / 'static'),
 ]
+STATIC_ROOT = BASE_DIR/''
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 #Media files configuration
 MEDIA_URL = '/media/'
