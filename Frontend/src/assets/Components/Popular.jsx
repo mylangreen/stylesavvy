@@ -6,7 +6,7 @@ import { MyContext } from "../../App";
 
 const Popular = ({ title, type, index }) => {
     const [products, setProducts] = useState([]);
-    const image_path = "http://127.0.0.1:8000/api";
+    const image_path = "https://stylesavvy.onrender.com/api";
   
     const listRef = useRef(null);
     const { addToCart, inCart, addToLike, inLike } = useContext(MyContext);
@@ -16,7 +16,7 @@ const Popular = ({ title, type, index }) => {
     }
   
     useEffect(() => {
-      fetch(`http://127.0.0.1:8000/api/${type ? type : "popular"}/`)
+      fetch(`https://stylesavvy.onrender.com/api/${type ? type : "popular"}/`)
         .then((response) => response.json())
         .then((data) => setProducts(data.reverse().slice(0, index)))
         .catch((error) => console.log("Error fetching product: ", error));

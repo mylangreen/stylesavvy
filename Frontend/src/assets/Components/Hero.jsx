@@ -6,10 +6,10 @@ function Hero() {
   const [index, setIndex] = useState(0);
   const [products, setProducts] = useState([]);
   const { addToCart, addToLike} = useContext(MyContext);
-  const image_path = "http://127.0.0.1:8000/api";
+  const image_path = "https://stylesavvy.onrender.com/api";
 
   useEffect(() => {
-    fetch("http://127.0.0.1:8000/api/trending/")
+    fetch("https://stylesavvy.onrender.com/api/trending/")
       .then((response) => response.json())
       .then((data) => setProducts(data))
       .catch((error) => console.log("Error fetching products: ", error));
