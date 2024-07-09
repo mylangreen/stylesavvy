@@ -7,7 +7,7 @@ import api from '../api';
 
 function Like() {
     const [products, setProducts] = useState([]);
-    const image_path = 'http://127.0.0.1:8000/api';
+    const image_path = 'https://stylesavvy.onrender.com/api';
 
     //Fetch liked products when the component mounts and when th products state changes
     useEffect(()=>{

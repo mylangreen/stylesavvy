@@ -7,11 +7,11 @@ import { MyContext } from "../../App";
 
 function Shop() {
   const [products, setProducts] = useState([]);
-  const image_path = "http://127.0.0.1:8000/api";
+  const image_path = "https://stylesavvy.onrender.com/api";
   const {addToLike} = useContext(MyContext);
 
   useEffect(() => {
-    fetch("http://127.0.0.1:8000/api/products/")
+    fetch("https://stylesavvy.onrender.com/api/products/")
       .then((response) => response.json())
       .then((data) => setProducts(data.reverse()))
       .catch((error) => console.log("Error fetching products: ", error));

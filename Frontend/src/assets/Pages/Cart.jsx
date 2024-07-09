@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 
 
 function Cart() {
-  const image_path = "http://127.0.0.1:8000/api";
+  const image_path = "https://stylesavvy.onrender.com/api";
   const [products, setProducts] = useState([]);
   const [cart, setCart] = useState([]);
   const {addToCart} = useContext(MyContext);
