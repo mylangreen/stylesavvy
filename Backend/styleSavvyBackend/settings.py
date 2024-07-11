@@ -99,7 +99,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'styleSavvyBackend.wsgi.application'
 
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:5173",
+    "https://stylesavvy-fashion.netlify.app/",
 ]
 
 # Database
