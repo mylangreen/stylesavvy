@@ -4,6 +4,7 @@ import Footer from "../Components/Footer";
 import { useParams } from "react-router-dom";
 import { useEffect, useState, useContext } from "react";
 import {MyContext} from "../../App";
+import api from "../api";
 
 
 function Product() {
@@ -26,7 +27,7 @@ function Product() {
   };
 
   useEffect(() => {
-    fetch(`http://127.0.0.1:8000/api/products/${id}/`)
+    fetch(`https://stylesavvy.onrender.com/${id}/`)
       .then((response) => response.json())
       .then((data) => setProduct(data))
       .catch((error) => console.log("Error fetching the product: ", error));
