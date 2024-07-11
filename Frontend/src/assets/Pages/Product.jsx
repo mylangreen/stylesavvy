@@ -27,11 +27,7 @@ function Product() {
   };
 
   useEffect(() => {
-<<<<<<< HEAD
-    fetch(`https://stylesavvy.onrender.com/${id}/`)
-=======
     fetch(`https://stylesavvy.onrender.com/products/${id}/`)
->>>>>>> e9581ab27815c28f4dc5d03d462b059df118dbd6
       .then((response) => response.json())
       .then((data) => setProduct(data))
       .catch((error) => console.log("Error fetching the product: ", error));
