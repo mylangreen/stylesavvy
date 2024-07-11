@@ -31,7 +31,7 @@ SECRET_KEY = 'django-insecure-n1y)&1pb0+03q3648f9($^xw90a0h+oak359ch@%vc5y418k89
 DEBUG = True
 
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 #Other configuration
 REST_FRAMEWORK = {

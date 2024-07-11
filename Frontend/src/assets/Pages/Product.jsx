@@ -10,7 +10,7 @@ import api from "../api";
 function Product() {
   const { name, id } = useParams();
   const [product, setProduct] = useState([]);
-  const image_path = "http://127.0.0.1:8000/api";
+  const image_path = "https://stylesavvy.onrender.com/api";
   const [currentIndex, setCurrentIndex] = useState(0);
   const images = [product.image, product.img2, product.img3, product.img4];
   const { addToCart, addToLike } = useContext(MyContext);
@@ -27,7 +27,11 @@ function Product() {
   };
 
   useEffect(() => {
+<<<<<<< HEAD
     fetch(`https://stylesavvy.onrender.com/${id}/`)
+=======
+    fetch(`https://stylesavvy.onrender.com/products/${id}/`)
+>>>>>>> e9581ab27815c28f4dc5d03d462b059df118dbd6
       .then((response) => response.json())
       .then((data) => setProduct(data))
       .catch((error) => console.log("Error fetching the product: ", error));
