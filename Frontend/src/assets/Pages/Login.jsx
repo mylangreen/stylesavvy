@@ -4,6 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import api from "../api";
 import { ACCESS_TOKEN, REFRESH_TOKEN } from "../constants";
 import Spinner from "../Components/Spinner";
+import backgroundImage from "../Img/pic3.jpeg";
 
 
 function Login() {
@@ -43,7 +44,7 @@ function Login() {
     }
 
     return(
-        <div className="login-page">
+        <div className="login-page" style={{backgroundImage: `url(${backgroundImage})`}}>
             <div className="login-container">
                 <h1>style<span>Savvy</span></h1>
                 <h3>Login to proceed</h3>

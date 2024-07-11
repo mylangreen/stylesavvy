@@ -100,6 +100,7 @@ WSGI_APPLICATION = 'styleSavvyBackend.wsgi.application'
 
 CORS_ALLOWED_ORIGINS = [
     "https://stylesavvy-fashion.netlify.app/",
+    "http://127.0.0.1:8000/"
 ]
 
 # Database

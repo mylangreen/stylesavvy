@@ -3,6 +3,7 @@ import { useState } from "react";
 import api from "../api";
 import { useNavigate, Link } from "react-router-dom";
 import Spinner from "../Components/Spinner";
+import backgroundImage from "../Img/pic3.jpeg";
 
 
 function SignUp() {
@@ -47,7 +48,7 @@ function SignUp() {
     };
   
     return (
-      <div className="signup-page">
+      <div className="signup-page" style={{backgroundImage: `url(${backgroundImage})`}}>
         <div className="signup-container">
           <h1>
             style<span>Savvy</span>

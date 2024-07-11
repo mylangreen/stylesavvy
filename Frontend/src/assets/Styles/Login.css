@@ -4,7 +4,6 @@
     height: 100vh;
     justify-content: center;
     align-items: center;
-    background-image: url(src/assets/img/pic3.jpeg);
     background-position: center;
 }
 .login-container {
