@@ -1,6 +1,9 @@
-.cart-page {
+.page {
     display: flex;
     flex-direction: column;
+}
+.cart-page {
+    min-height: 90vh;
 }
 .cart-container {
     display: flex;

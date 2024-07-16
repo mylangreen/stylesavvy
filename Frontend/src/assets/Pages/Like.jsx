@@ -27,6 +27,7 @@ function Like() {
 
 
     return(
+        <div className="page">
         <div className="cart-page">
         <NavBar/>
         <h2>LIKED PRODUCTS</h2>
@@ -45,6 +46,7 @@ function Like() {
                     </div>
                 </div>
             ))) : ( <h2>You have no liked products</h2> ) }
+        </div>
         </div>
         <Footer/>
     </div>

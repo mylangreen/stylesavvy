@@ -42,7 +42,8 @@ function Cart() {
   
 
   return (
-    <div className="cart-page">
+    <div className="page">
+      <div className="cart-page">
       <NavBar />
       <h2>Your Cart</h2>
       {products.length < 0 ? (
@@ -87,6 +88,7 @@ function Cart() {
         </div>
   
         </div>
+      </div>
       <Footer/>
     </div>
   );

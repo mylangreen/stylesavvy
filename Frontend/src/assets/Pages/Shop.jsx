@@ -18,7 +18,8 @@ function Shop() {
   }, []);
 
   return (
-    <div className="shop-page">
+    <div className="page">
+      <div className="shop-page">
       <NavBar />
       <div className="shop-list">
         {products.map((product, index) => (
@@ -37,6 +38,7 @@ function Shop() {
             </div>
           </div>
         ))}
+      </div>
       </div>
       <Footer/>
     </div>

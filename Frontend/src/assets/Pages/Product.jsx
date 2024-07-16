@@ -34,7 +34,8 @@ function Product() {
   }, []);
 
   return (
-    <div className="product-page">
+    <div className="page">
+      <div className="product-page">
       <NavBar />
       <div className="product-container">
         <div className="main-container">
@@ -70,6 +71,7 @@ function Product() {
         <button className="like" onClick={() => addToLike(product)}>
           <box-icon name="heart" size="xsm" color="#F3482A"></box-icon>
         </button>
+      </div>
       </div>
       <Footer/>
     </div>
