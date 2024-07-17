@@ -99,30 +99,30 @@ TEMPLATES = [
 WSGI_APPLICATION = 'styleSavvyBackend.wsgi.application'
 
 CORS_ALLOWED_ORIGINS = [
-    "https://stylesavvy-fashion.netlify.app/",
-    "http://127.0.0.1:8000/"
+    "https://stylesavvy-fashion.netlify.app",
+    "http://127.0.0.1:8000"
 ]
 
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
-if not DEBUG:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql',
-            'NAME': "postgres",
-            'USER': "postgres.cmrrazqsbqpjrrguqyze",
-            'PASSWORD': "moZ8KOkA0pZXzOUc",
-            'HOST': "aws-0-ap-south-1.pooler.supabase.com",
-            'PORT': "6543"
-        }
-    }
-else:
-    DATABASES = {
+DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': "postgres",
+        'USER': "postgres.cmrrazqsbqpjrrguqyze",
+        'PASSWORD': "moZ8KOkA0pZXzOUc",
+        'HOST': "aws-0-ap-south-1.pooler.supabase.com",
+        'PORT': "6543"
     }
-}    
+}
+
+
+# DATABASES = {
+# 'default': {
+#     'ENGINE': 'django.db.backends.sqlite3',
+#     'NAME': BASE_DIR / 'db.sqlite3',
+# }
+# }    
 
 
 # Password validation
@@ -163,7 +163,7 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR / 'static'),
 ]
-STATIC_ROOT = BASE_DIR/''
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 #Media files configuration
