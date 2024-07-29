@@ -1,5 +1,4 @@
 import "../Styles/NavBar.css";
-import { useEffect, useState} from "react";
 import {NavLink,Link, useNavigate} from "react-router-dom";
 import SearchBar from "./SearchBar";
 

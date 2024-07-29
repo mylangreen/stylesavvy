@@ -1,17 +1,18 @@
 import "../Styles/Hero.css";
 import { useEffect, useContext, useState } from "react";
 import { MyContext } from "../../App";
+import { IMAGE_PATH } from "../constants";
+import api from "../api";
 
 function Hero() {
   const [index, setIndex] = useState(0);
   const [products, setProducts] = useState([]);
   const { addToCart, addToLike} = useContext(MyContext);
-  const image_path = "https://stylesavvy.onrender.com/api";
+  const image_path = IMAGE_PATH+"/api";
 
   useEffect(() => {
-    fetch("https://stylesavvy.onrender.com/api/trending/")
-      .then((response) => response.json())
-      .then((data) => setProducts(data))
+    api.get("/api/trending/")
+      .then((response) => setProducts(response.data))
       .catch((error) => console.log("Error fetching products: ", error));
   }, []);
 

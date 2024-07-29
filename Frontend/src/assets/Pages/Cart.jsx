@@ -5,10 +5,11 @@ import { useEffect, useState, useContext } from "react";
 import api from "../api";
 import { MyContext } from "../../App";
 import { Link } from "react-router-dom";
+import { IMAGE_PATH } from "../constants";
 
 
 function Cart() {
-  const image_path = "https://stylesavvy.onrender.com/api";
+  const image_path = IMAGE_PATH+"/api";
   const [products, setProducts] = useState([]);
   const [cart, setCart] = useState([]);
   const {addToCart} = useContext(MyContext);

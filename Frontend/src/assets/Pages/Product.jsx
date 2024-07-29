@@ -5,12 +5,12 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState, useContext } from "react";
 import {MyContext} from "../../App";
 import api from "../api";
-
+import { IMAGE_PATH } from "../constants";
 
 function Product() {
   const { name, id } = useParams();
   const [product, setProduct] = useState([]);
-  const image_path = "https://stylesavvy.onrender.com/api";
+  const image_path = IMAGE_PATH+"/api";
   const [currentIndex, setCurrentIndex] = useState(0);
   const images = [product.image, product.img2, product.img3, product.img4];
   const { addToCart, addToLike } = useContext(MyContext);
@@ -27,9 +27,8 @@ function Product() {
   };
 
   useEffect(() => {
-    fetch(`https://stylesavvy.onrender.com/api/products/${id}/`)
-      .then((response) => response.json())
-      .then((data) => setProduct(data))
+    api.get(`/api/products/${id}/`)
+      .then((response) => setProduct(response.data))
       .catch((error) => console.log("Error fetching the product: ", error));
   }, []);
 

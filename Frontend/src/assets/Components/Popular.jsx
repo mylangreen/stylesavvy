@@ -2,11 +2,13 @@ import "../Styles/Popular.css";
 import { useEffect, useRef, useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import { MyContext } from "../../App";
+import api from "../api";
+import { IMAGE_PATH } from "../constants";
 
 
 const Popular = ({ title, type, index }) => {
     const [products, setProducts] = useState([]);
-    const image_path = "https://stylesavvy.onrender.com/api";
+    const image_path = IMAGE_PATH+"/api";
   
     const listRef = useRef(null);
     const { addToCart, inCart, addToLike, inLike } = useContext(MyContext);
@@ -16,9 +18,8 @@ const Popular = ({ title, type, index }) => {
     }
   
     useEffect(() => {
-      fetch(`https://stylesavvy.onrender.com/api/${type ? type : "popular"}/`)
-        .then((response) => response.json())
-        .then((data) => setProducts(data.reverse().slice(0, index)))
+      api.get(`/api/${type ? type : "popular"}/`)
+        .then((response) =>setProducts(response.data.reverse().slice(0, index)))
         .catch((error) => console.log("Error fetching product: ", error));
     }, []);
   

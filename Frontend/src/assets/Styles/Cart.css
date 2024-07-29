@@ -11,6 +11,7 @@
 }
 .cart-list {
     width: 100%;
+    min-height: 40vh;
     margin-top: 20px;
     margin-bottom: 20px;
     display: flex;

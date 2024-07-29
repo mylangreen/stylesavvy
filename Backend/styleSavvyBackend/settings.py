@@ -28,10 +28,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-n1y)&1pb0+03q3648f9($^xw90a0h+oak359ch@%vc5y418k89'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get('DEBUG', False) == True
+DEBUG = True
 
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['127.0.0.1','localhost']
 
 #Other configuration
 REST_FRAMEWORK = {
@@ -100,12 +100,14 @@ WSGI_APPLICATION = 'styleSavvyBackend.wsgi.application'
 
 CORS_ALLOWED_ORIGINS = [
     "https://stylesavvy-fashion.netlify.app",
-    "http://127.0.0.1:8000"
+    "http://localhost:5173",
 ]
 
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
-DATABASES = {
+
+if DEBUG == False:
+    DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': "postgres",
@@ -115,14 +117,13 @@ DATABASES = {
         'PORT': "6543"
     }
 }
-
-
-# DATABASES = {
-# 'default': {
-#     'ENGINE': 'django.db.backends.sqlite3',
-#     'NAME': BASE_DIR / 'db.sqlite3',
-# }
-# }    
+else:
+    DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}    
 
 
 # Password validation

@@ -4,16 +4,17 @@ import Footer from "../Components/Footer";
 import { Link } from "react-router-dom";
 import { useEffect, useState, useContext } from "react";
 import { MyContext } from "../../App";
+import api from "../api";
+import { IMAGE_PATH } from "../constants";
 
 function Shop() {
   const [products, setProducts] = useState([]);
-  const image_path = "https://stylesavvy.onrender.com/api";
+  const image_path = IMAGE_PATH+"/api";
   const {addToLike} = useContext(MyContext);
 
   useEffect(() => {
-    fetch("https://stylesavvy.onrender.com/api/products/")
-      .then((response) => response.json())
-      .then((data) => setProducts(data.reverse()))
+    api.get("/api/products/")
+      .then((response) => setProducts(response.data.reverse()))
       .catch((error) => console.log("Error fetching products: ", error));
   }, []);
 

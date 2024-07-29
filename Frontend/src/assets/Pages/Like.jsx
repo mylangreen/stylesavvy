@@ -4,10 +4,11 @@ import Footer from '../Components/Footer';
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import api from '../api';
+import { IMAGE_PATH } from '../constants';
 
 function Like() {
     const [products, setProducts] = useState([]);
-    const image_path = 'https://stylesavvy.onrender.com/api';
+    const image_path = IMAGE_PATH+'/api';
 
     //Fetch liked products when the component mounts and when th products state changes
     useEffect(()=>{
