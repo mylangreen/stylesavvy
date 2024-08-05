@@ -106,24 +106,23 @@ CORS_ALLOWED_ORIGINS = [
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-if DEBUG == False:
-    DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': "postgres",
-        'USER': "postgres.cmrrazqsbqpjrrguqyze",
-        'PASSWORD': "moZ8KOkA0pZXzOUc",
-        'HOST': "aws-0-ap-south-1.pooler.supabase.com",
-        'PORT': "6543"
-    }
+DATABASES = {
+'default': {
+    'ENGINE': 'django.db.backends.postgresql',
+    'NAME': "postgres",
+    'USER': "postgres.cmrrazqsbqpjrrguqyze",
+    'PASSWORD': "moZ8KOkA0pZXzOUc",
+    'HOST': "aws-0-ap-south-1.pooler.supabase.com",
+    'PORT': "6543"
 }
-else:
-    DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}    
+}
+
+# DATABASES = {
+# 'default': {
+#     'ENGINE': 'django.db.backends.sqlite3',
+#     'NAME': BASE_DIR / 'db.sqlite3',
+# }
+# }    
 
 
 # Password validation
