@@ -123,7 +123,7 @@ DATABASES = {
 #     'NAME': BASE_DIR / 'db.sqlite3',
 # }
 # }    
-
+# comment
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
